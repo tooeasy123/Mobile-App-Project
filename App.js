@@ -1,21 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import AddStaffScreen from './Screens/AddStaffScreen';
+import DirectoryScreen from './Screens/DirectoryScreen'
+import StaffScreen from './Screens/StaffScreen';
+import StartScreen from './Screens/StartScreen';
+import AddDepartmentScreen from './Screens/AddDepartmentScreen';
+import DepartmentScreen from './Screens/DepartmentScreen';
+import ModifyDepartment from './Screens/ModifyDepartment'
+import ModifyPeople from './Screens/ModifyPeople'
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    const Stack = createStackNavigator();
+  
+    return (<>
+    <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="StartScreen"
+            screenOptions={{ headerShown: false }}
+          >
+            <Stack.Screen name="StartScreen" component={StartScreen} />
+            <Stack.Screen name="DirectoryScreen" component={DirectoryScreen} />
+            <Stack.Screen name="DepartmentScreen" component={DepartmentScreen} />
+            <Stack.Screen name="StaffScreen" component={StaffScreen} />
+            <Stack.Screen name="AddStaffScreen" component={AddStaffScreen} />
+            <Stack.Screen name="AddDepartmentScreen" component={AddDepartmentScreen} />
+            <Stack.Screen name="ModifyDepartment" component={ModifyDepartment} />
+            <Stack.Screen name="ModifyPeople" component={ModifyPeople} />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+  
+          </Stack.Navigator>
+        </NavigationContainer>
+    
+    
+    </>)
+  }
