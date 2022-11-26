@@ -4,8 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Department({department}) {
     return (
       <View style={styles.container}>
-          <Text>{department['DepartmentID']}</Text>
-          <Text>{department['Name']}</Text>
+          <Text>DepartmentID: {department['DepartmentID']}</Text>
+          <Text>Name: {department['Name']}</Text>
       </View>
     );
   }

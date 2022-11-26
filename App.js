@@ -8,6 +8,9 @@ import AddDepartmentScreen from './Screens/AddDepartmentScreen';
 import DepartmentScreen from './Screens/DepartmentScreen';
 import ModifyDepartment from './Screens/ModifyDepartment'
 import ModifyPeople from './Screens/ModifyPeople'
+import ViewAllStaff from './Screens/ViewAllStaff'
+import ViewSingleStaff from './Screens/ViewSingleStaff'
+import { InspectEmployee } from './Screens/InspectEmployee';
 
 export default function App() {
     const Stack = createStackNavigator();
@@ -26,6 +29,10 @@ export default function App() {
             <Stack.Screen name="AddDepartmentScreen" component={AddDepartmentScreen} />
             <Stack.Screen name="ModifyDepartment" component={ModifyDepartment} />
             <Stack.Screen name="ModifyPeople" component={ModifyPeople} />
+            <Stack.Screen name="ViewAllStaff" component={ViewAllStaff} />
+            <Stack.Screen name="ViewSingleStaff" component={ViewSingleStaff} />
+            <Stack.Screen name="InspectEmployee" component={InspectEmployee} />
+
 
 
   

@@ -1,12 +1,12 @@
 import { Button, ScrollView, StyleSheet } from "react-native";
+import Directory from "../compoents/DirectoryPeople";
 
 
-export default function StaffScreen({ navigation }) {
+export default function ViewAllStaff({ navigation }) {
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <Button onPress={() => {navigation.goBack()}} title="Back">Back</Button>
-            <Button onPress={() => {navigation.navigate('ViewAllStaff')}} title="ViewAllStaff">Add New Department Information</Button>
-            <Button onPress={() => {navigation.navigate('ViewSingleStaff')}} title="ViewSingleStaff">Add New Department Information</Button>
+            <Directory/>
         </ScrollView>
     )
    

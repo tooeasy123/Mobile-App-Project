@@ -17,9 +17,9 @@ export default function AddDepartmentScreen({ navigation }) {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Button onPress={() => {navigation.goBack()}} title="Back">Back</Button>
+            <Button onPress={() => {navigation.goBack()}} title="Go Back To Directory" color={"#941a1d"}>Back</Button>
             <Text>Type Department Name below</Text><TextInput onChangeText={(val,i) => { setName(val); console.log(val) }} value={name} />
-            <Button onPress={async() => {await AddDepartment(name)}} title="submit">submit</Button>
+            <Button onPress={async() => {await AddDepartment(name)}} title="submit"color={"#941a1d"}>submit</Button>
         </ScrollView>
     )
    
@@ -27,11 +27,29 @@ export default function AddDepartmentScreen({ navigation }) {
 
 
    const styles = StyleSheet.create({
+    scroll: {
+      flexGrow: 1,
+      scrollEnabled: true,
+    },
     container: {
-        paddingTop: 100,
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: "#D9D9D9",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    titleText: {
+      color: "#262626",
+      fontSize: 30,
+      fontWeight: "bold",
+    },
+    textInput: {
+      height: 30,
+      borderWidth: 1,
+      borderRadius: 4,
+      padding: 5,
+    },
+    smallText: {
+      color: "#262626",
+      fontSize: 12,
     },
   });

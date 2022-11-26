@@ -49,7 +49,7 @@ export default function AddStaffScreen({ navigation }) {
 
       return (
           <ScrollView contentContainerStyle={styles.container}>
-              <Button onPress={() => {navigation.goBack()}} title="Back">Back</Button>
+              <Button onPress={() => {navigation.goBack()}} title="Go Back To Directory" color={"#941a1d"}>Go Back To Directory</Button>
               <Text>Type Name below </Text> 
               <TextInput placeholder = "Name" onChangeText={(val,i) => { setName(val); console.log(val)}} value={Name} />
               <Text>Type Phone Number below in text box</Text>
@@ -66,18 +66,36 @@ export default function AddStaffScreen({ navigation }) {
               <TextInput placeholder = "Postcode" onChangeText={(val,i) => { setPostcode(val); console.log(val) }} value={Postcode} />
               <Text>Type Country below</Text>
               <TextInput placeholder = "Country"onChangeText={(val,i) => { setCountry(val); console.log(val) }} value={Country} />
-              <Button onPress={AddStaff} title="submit">Submit New Employee/Staff Details</Button>
+              <Button onPress={AddStaff} title="submit New Details" color={"#941a1d"}>Submit New Employee/Staff Details</Button>
           </ScrollView>
       )
     
     }
 
     const styles = StyleSheet.create({
-      container: {
-          paddingTop: 100,
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+      scroll: {
+        flexGrow: 1,
+        scrollEnabled: true,
       },
-    })
+      container: {
+        flex: 1,
+        backgroundColor: "#D9D9D9",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      titleText: {
+        color: "#262626",
+        fontSize: 30,
+        fontWeight: "bold",
+      },
+      textInput: {
+        height: 30,
+        borderWidth: 1,
+        borderRadius: 4,
+        padding: 5,
+      },
+      smallText: {
+        color: "#262626",
+        fontSize: 12,
+      },
+    });

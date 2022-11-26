@@ -4,15 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function People({person}) {
   return (
     <View style={styles.container}>
-        <Text>{person['PersonID']}</Text>
-        <Text>{person['Name']}</Text>
-        <Text>{person['Phone']}</Text>
-        <Text>{person['DepartmentID']}</Text>
-        <Text>{person['Suburb']}</Text>
-        <Text>{person['Address']}</Text>
-        <Text>{person['State']}</Text>
-        <Text>{person['Postcode']}</Text>
-        <Text>{person['Country']}</Text>
+        <Text>PersonID: {person['PersonID']}</Text>
+        <Text>Name: {person['Name']}</Text>
+        <Text>Phone: {person['Phone']}</Text>
+        <Text>DepartmentID: {person['DepartmentID']}</Text>
+        <Text>Suburb: {person['Suburb']}</Text>
+        <Text>Address: {person['Address']}</Text>
+        <Text>State: {person['State']}</Text>
+        <Text>PostCode: {person['Postcode']}</Text>
+        <Text>Country: {person['Country']}</Text>
     </View>
   );
 }

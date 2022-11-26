@@ -14,11 +14,29 @@ export default function DepartmentScreen({ navigation }) {
 
 
    const styles = StyleSheet.create({
+    scroll: {
+      flexGrow: 1,
+      scrollEnabled: true,
+    },
     container: {
-        paddingTop: 100,
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: "#D9D9D9",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    titleText: {
+      color: "#262626",
+      fontSize: 30,
+      fontWeight: "bold",
+    },
+    textInput: {
+      height: 30,
+      borderWidth: 1,
+      borderRadius: 4,
+      padding: 5,
+    },
+    smallText: {
+      color: "#262626",
+      fontSize: 12,
     },
   });
