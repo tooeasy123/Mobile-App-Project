@@ -5,7 +5,7 @@ import Directory from "../compoents/DirectoryDepartment";
 export default function DepartmentScreen({ navigation }) {
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Button onPress={() => {navigation.goBack()}} title="Back">Back</Button>
+            <Button onPress={() => {navigation.goBack()}} title="Go back to Directory" color={"#941a1d"}>Back</Button>
             <Directory/>
         </ScrollView>
     )

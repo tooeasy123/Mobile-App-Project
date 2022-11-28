@@ -13,10 +13,6 @@ export function InspectEmployee({ navigation }) {
     <ScrollView contentContainerStyle={styles.scroll}>
       <View style={styles.container}>
         <Text style={styles.titleText}>ROI Staff Member Details</Text>
-        <Text style={styles.normalText}>
-          To modify staff details, press the Modify button at the bottom of the
-          page.
-        </Text>
         <View style={styles.detailsContainer}>
           <Text style={styles.normalText}>Name: {employeeDetails["Name"]}</Text>
           <Text style={styles.normalText}>
@@ -38,13 +34,7 @@ export function InspectEmployee({ navigation }) {
           <Text style={styles.normalText}>
             Country: {employeeDetails["Country"]}
           </Text>
-          <View style={{ margin: 5 }}>
-            <Button
-              onPress={() => navigation.navigate("StaffScreen")}
-              color={"#941a1d"}
-              title={"Back to Directory"}
-            />
-          </View>
+          <Button onPress={() => {navigation.goBack()}} title="Back to view individual profiles"color={"#941a1d"}>Back</Button>
         </View>
       </View>
     </ScrollView>

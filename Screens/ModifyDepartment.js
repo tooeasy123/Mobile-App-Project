@@ -1,56 +1,55 @@
 import { Button, ScrollView, StyleSheet, TextInput, Text } from "react-native";
 import React, { useEffect, useState } from 'react'; 
-import { SelectList } from "react-native-dropdown-select-list";
 
 
 
-export default function ModifyDepartment({ navigation }) {
-    const [newDepartmentName, setName] = useState("");
-    const [departments, setDepartments] = useState([]);
-    const [DepartmentID, setDepartmentID] = useState("");
-
-    const ModifyDepartment = (newDepartmentName) => {
-      const requestOptions = {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ 'ID': DepartmentID, 'Name': newDepartmentName})
-      };
-      debugger;
-     fetch ("http://192.168.0.4:3000/get_UpdateDepartmentdata", requestOptions)
-     .then(r => r.json())
-     .then(j => {debugger})
-     .catch(e => alert(e.message))
-  }
-    useEffect(() => { 
-        fetch("http://192.168.0.4:3000/get_departmentdata")
-          .then(r => r.json())
-          .then(json=>{ 
-            let departments = json.map(item => {return {key:item.DepartmentID, value:item.Name };}); 
-            setDepartments(departments); 
-          }) 
-      },[])
+export default function ModifyDepartmentScreen({ navigation }) {
+    const [name, setName] = useState("")
+    const [DepartmentID,setID] = useState("")
+    const ModifyDepartment = async (name) => {
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({"DepartmentID":Number.parseInt(DepartmentID, 10), "Name":name})
+        };
+        await fetch ("http://192.168.0.4:3000/get_UpdateDepartmentdata", requestOptions)
+    }
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Button onPress={() => {navigation.goBack()}} title="Back">Back</Button>
-            <Text>Select Department to update</Text>
-            <SelectList setSelected={(val) => setDepartmentID(departments)}data={departments} save="key"/>
-            <Text></Text>
-            <Text>Type Department Name below</Text>
-            <TextInput onChangeText={(val,i) => {setName(val); console.log(val)}} value={newDepartmentName} />
-            <Button onPress={async() => {ModifyDepartment(newDepartmentName)}} title="submit">submit</Button>
+            <Button onPress={() => {navigation.goBack()}} title="Go Back To Directory" color={"#941a1d"}>Back</Button>
+            <Text>Type the Department ID you wish to change</Text><TextInput onChangeText={(val,i) => { setID(val); console.log(val) }} value={DepartmentID} />
+            <Text>Type Department Name below</Text><TextInput onChangeText={(val,i) => { setName(val); console.log(val) }} value={name} />
+            <Button onPress={async() => {await ModifyDepartment(name,DepartmentID)}} title="click to add change existing department"color={"#941a1d"}>submit</Button>
         </ScrollView>
     )
    
    }
 
-
    const styles = StyleSheet.create({
+    scroll: {
+      flexGrow: 1,
+      scrollEnabled: true,
+    },
     container: {
-        paddingTop: 100,
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: "#D9D9D9",
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    titleText: {
+      color: "#262626",
+      fontSize: 30,
+      fontWeight: "bold",
+    },
+    textInput: {
+      height: 30,
+      borderWidth: 1,
+      borderRadius: 4,
+      padding: 5,
+    },
+    smallText: {
+      color: "#262626",
+      fontSize: 12,
     },
   });

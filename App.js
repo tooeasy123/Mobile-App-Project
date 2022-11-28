@@ -9,7 +9,7 @@ import DepartmentScreen from './Screens/DepartmentScreen';
 import ModifyDepartment from './Screens/ModifyDepartment'
 import ModifyPeople from './Screens/ModifyPeople'
 import ViewAllStaff from './Screens/ViewAllStaff'
-import ViewSingleStaff from './Screens/ViewSingleStaff'
+import {ViewSingleStaff} from './Screens/ViewSingleStaff'
 import { InspectEmployee } from './Screens/InspectEmployee';
 
 export default function App() {
