@@ -19,7 +19,7 @@ export default function AddDepartmentScreen({ navigation }) {
         <ScrollView contentContainerStyle={styles.container}>
             <Button onPress={() => {navigation.goBack()}} title="Go Back To Directory" color={"#941a1d"}>Back</Button>
             <Text>Type Department Name below</Text><TextInput onChangeText={(val,i) => { setName(val); console.log(val) }} value={name} />
-            <Button onPress={async() => {await AddDepartment(name)}} title="click to add a new department"color={"#941a1d"}>submit</Button>
+            <Button onPress={async() => {await AddDepartment(name)}} title="Press to Modify Department"color={"#941a1d"}>submit</Button>
         </ScrollView>
     )
    
